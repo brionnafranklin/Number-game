@@ -40,6 +40,8 @@ namespace Number_game
                 {
                     //end
                     gameOver = true;
+                    Console.WriteLine("Game Over");
+                    Console.ReadKey();
                 }
 
                 //if no
@@ -59,9 +61,18 @@ namespace Number_game
                     //if lower
                     if (choice == "2")
                     {
-                        max = guess - 1;
+                        max = guess;
                     }
                 }
+
+                //if player cheats
+                if (min == max || min <= 0 || max >= 102)
+                {
+                    Console.WriteLine("liar detected! I can't believe you've done this!");
+                    gameOver = true;
+                    Console.ReadKey();
+                }
+
             }
 
         }
